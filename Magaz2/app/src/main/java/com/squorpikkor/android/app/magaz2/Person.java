@@ -1,8 +1,5 @@
 package com.squorpikkor.android.app.magaz2;
 
-import android.content.SharedPreferences;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
  //Created by SquorpikkoR on 18.10.2016.
@@ -27,7 +24,7 @@ public class Person {
 
     private String name;
     private ArrayList<Juice> juices = new ArrayList<>();
-    private ArrayList<Product> products = new ArrayList<>();
+    private ArrayList<Bonus> bonuses = new ArrayList<>();
     private double money;
     private double allOrdersSum;
     private double moneyLeft;
@@ -55,12 +52,12 @@ public class Person {
         this.juices = juices;
     }
 
-    public ArrayList<Product> getProducts() {
-        return products;
+    public ArrayList<Bonus> getBonuses() {
+        return bonuses;
     }
 
-    public void setProducts(ArrayList<Product> products) {
-        this.products = products;
+    public void setBonuses(ArrayList<Bonus> bonuses) {
+        this.bonuses = bonuses;
     }
 
     public double getMoney() {
@@ -93,7 +90,7 @@ public class Person {
     }
 
     public void addProduct(String name, int quantity) {
-        products.add(new Product(name, quantity));
+        bonuses.add(new Bonus(name, quantity));
     }
 
     public double priceSum() {
@@ -101,8 +98,8 @@ public class Person {
         for (Juice juice:juices) {
             priceSum += juice.getPrice()*juice.getQuantity();
         }
-        for (Product product:products) {
-            priceSum += product.getPrice()*product.getQuantity();
+        for (Bonus bonus : bonuses) {
+            priceSum += bonus.getPrice()* bonus.getQuantity();
         }
         return priceSum;
     }

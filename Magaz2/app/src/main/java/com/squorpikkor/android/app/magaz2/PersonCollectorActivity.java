@@ -1,7 +1,6 @@
 package com.squorpikkor.android.app.magaz2;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -41,7 +40,7 @@ public class PersonCollectorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_collector);
 
-        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.createPerson);
         loadPerson = (Button) findViewById(R.id.displayPerson);
         editText = (EditText) findViewById(R.id.textView);
 
@@ -51,7 +50,7 @@ public class PersonCollectorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //PersonCollector.createPerson(editText.getText().toString());
                 switch (view.getId()) {
-                    case R.id.button:
+                    case R.id.createPerson:
                         PersonCollector.createPerson(editText.getText().toString());
                         break;
                     case R.id.displayPerson:
