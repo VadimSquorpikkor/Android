@@ -69,7 +69,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:background="#111111"
-            android:id="@+id/PriceClicker">
+            android:id="@+id/priceClicker">
 
             <LinearLayout
                 android:orientation="horizontal"
